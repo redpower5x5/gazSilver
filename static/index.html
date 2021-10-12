@@ -1,0 +1,141 @@
+<html>
+
+<head>
+    <script src="js/jquery.js"></script>
+    <script src="js/anime.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ScrollBar -->
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    <!-- End ScrollBar -->
+
+    <!-- Header -->
+    <section id="header">
+		<div class="header">
+            <div id="objects_header">
+
+                <div id="div_text">
+                    <h1 id="text">GaSilver</h1>
+                    <p id="text_head">Легкий способ управления сложной системой газа!</p>
+                </div>
+                <div id="div_lamp" class="area">
+                    d
+                    <img id="lamp" src="https://thumb.tildacdn.com/tild6462-3762-4164-a336-393631633938/-/resize/542x/-/format/webp/photo.png" alt="">
+                </div>
+            </div>
+		</div>
+	</section> 
+    <!-- End Header -->
+
+    <!-- Body -->
+    <main>
+        <div id="div_img">
+            <textarea id="butt_1"></textarea>
+            <textarea id="butt_2"></textarea>
+            <textarea id="butt_3"></textarea>
+            <textarea id="butt_4"></textarea>
+            <textarea id="butt_5"></textarea>
+            <textarea id="butt_6"></textarea>
+            <textarea id="butt_7"></textarea>
+            <textarea id="butt_8"></textarea>
+            <textarea id="butt_9"></textarea>
+            <textarea id="butt_10"></textarea>
+            <textarea id="butt_11"></textarea>
+            <textarea id="butt_12"></textarea>
+        </div>
+    </main>
+
+    <div id="buttons_all">
+        <!-- <div  id="button_update app">Analyze</div>
+        <div  id="button_fix app">Analyze</div>
+        <div  id="button_fit app">Analyze</div> -->
+        <button id="button_update">update</button>
+        <button id="button_fix">fix</button>
+        <button id="button_fit">fit</button>
+    </div>
+    <div id="text_ar">
+        <textarea name="" id="button_13" cols="30" rows="10"></textarea>
+    </div>
+
+    <div id="q_p">
+        <p id="first_1">Датчики расходов</p>
+        <div id="first_objects">
+            <div id="_1"><p id="znach">P_1:</p></div>
+            <div id="_2"><p id="znach">P_2:</p></div>
+            <div id="_3"><p id="znach">P_3:</p></div>
+            <div id="_4"><p id="znach">P_4:</p></div>
+            <div id="_5"><p id="znach">P_5:</p></div>
+            <div id="_6"><p id="znach">P_6:</p></div>
+            <div id="_7"><p id="znach"> P_7:</p></div>
+            <div id="_8"><p id="znach">P_8:</p></div>
+            <div id="_9"><p id="znach">P_9:</p></div>
+            <div id="_10"><p id="znach">PG_1:</p></div>
+            <div id="_11"><p id="znach">PG_2:</p></div>
+        </div>
+        <p id="second_2">Давление датчиков</p>
+        <div id="second_objects">
+            <div id="a1"><p>Q1:</p></div>
+            <div id="a2"><p>Q2:</p></div>
+            <div id="a3"><p>Q3:</p></div>
+            <div id="a4"><p>Q4:</p></div>
+            <div id="a5"><p>Q5:</p></div>
+            <div id="a6"><p>Q6:</p></div>
+            <div id="a7"><p>Q7:</p></div>
+            <div id="a8"><p>QP1:</p></div>
+            <div id="a9"><p>QP2:</p></div>
+            <div id="a10"><p>QP3:</p></div>
+            <div id="a11"><p>QP4:</p></div>
+            <div id="a12"><p>QG1:</p></div>
+            <div id="a13"><p>QG2:</p></div>
+        </div>
+    </div>
+    <!-- End Body -->
+    
+
+    <!-- Footer -->
+	<section id="footer">
+		<div class="footer container">
+			<div class="brand">
+				<h1><span>H</span>ack_<span>MIS</span>i<span>S</span></h1>
+			</div>
+
+            <div>
+                <img class="misis" src="https://www.4dk.ru/files/88723/misis-logo.png" alt="">
+                <img class="misis" src="https://static.tildacdn.com/tild3162-3233-4537-b736-343336353937/Group.svg" alt="">
+                <img class="misis" src="https://static.tildacdn.com/tild3965-3035-4934-a432-393432363061/Layer_1.svg" alt="">
+            </div>
+
+			<p class="mail">hack_misis@gmail.com</p>
+			<div class="social-icon">
+				<div class="social-item">
+					<a href="https://www.facebook.com/ars.iv.524/"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+				</div>
+				<div class="social-item">
+					<a href="https://www.instagram.com/_.kurtka_bein._/?hl=ru"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+				</div>
+				<div class="social-item">
+					<a href="#"><img src="https://img.icons8.com/bubbles/100/000000/twitter.png" /></a>
+				</div>
+			</div>
+			<p>Copyright © 2021 Hack_MISiS. All rights reserved</p>
+		</div>
+	</section>
+	<!-- End Footer -->
+    <script type="text/javascript">
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function(){
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + "%";
+        }
+    </script>
+
+
+
+</body>
+
+</html>
