@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  gaz_back:
+    build: .
+    ports:
+      - 8008:80
