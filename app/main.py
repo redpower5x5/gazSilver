@@ -169,17 +169,18 @@ def super_solve(q_arr, valv_static, new_input_valves):
           if new_input_valves[elem] > 1.0: new_input_valves[elem] = 1.0
   return new_input_valves
 
-app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
-
-@app.get("/")
-def base():
-  return {'kek': str(model_env.feature_importances_)}
+api_app = FastAPI(title="api app")
 
 
-@app.get("/api/fix")
+
+
+# @app.get("/")
+# def base():
+#   return {'kek': str(model_env.feature_importances_)}
+
+
+@api_app.get("/fix")
 def fix_env(data: str):
     input_vlavs = [float(x.replace(',','.')) for x in data.split(' ')]
     output_val = model_env.predict(input_vlavs)
@@ -205,7 +206,7 @@ def fix_env(data: str):
     out_env = out_env.replace('\n', '')
     return {"fixed_date": out_env, "new_valvs": new_input_valves}
 
-@app.get("/api/fit")
+@api_app.get("/fit")
 def fit_env(data: str):
     input_vlavs = [float(x) for x in data.split(' ')]
     fixed_val = int(input_vlavs[-1]) - 1
@@ -232,7 +233,7 @@ def fit_env(data: str):
     out_env = out_env.replace('\n', '')
     return {"fited_date": out_env, "new_valvs": new_input_valves}
 
-@app.get("/api/update")
+@api_app.get("/update")
 def update_env(data: str):
     input_vlavs = [float(x) for x in data.split(' ')]
     output_val = model_env.predict(input_vlavs)
@@ -246,3 +247,7 @@ def update_env(data: str):
     output_str = output_str[:-1]
 
     return {"updated_data": output_str}
+
+app = FastAPI()
+app.mount("/api", api_app)
+app.mount("/", StaticFiles(directory="static",html = True), name="static")
